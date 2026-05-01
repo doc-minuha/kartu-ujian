@@ -2843,22 +2843,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		const loader = document.getElementById('loading-overlay');
 		loader.classList.add('loading-hidden');
 	}
-
-	// PENGGUNAAN PADA FUNGSI SAVE/LOAD
-	async function saveToSpreadsheet() {
-		showLoading(); // Munculkan lingkaran bergerak
-		try {
-			// Proses kirim data ke spreadsheet
-			await fetch(SCRIPT_URL, {
-				method: 'POST',
-				body: JSON.stringify(state)
-			});
-		} catch (error) {
-			alert("Gagal terhubung ke server!");
-		} finally {
-			hideLoading(); // Hilangkan setelah selesai
-		}
-	}
 	
 	    // --- LOAD DATA ---
 	async function loadState() {
